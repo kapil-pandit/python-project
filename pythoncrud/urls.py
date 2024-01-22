@@ -15,7 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+# from django.urls import path
+from django.urls import path,include
 from pythoncrud import views
 
 
@@ -23,7 +24,10 @@ from pythoncrud import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('crud_app.urls')),
     path('about-us/', views.aboutus),
     path('contact-us/', views.conatctus),
     path('updates/', views.updates),
+    path('dynamic-route/<int:id>', views.dynamicRoute),
+    path('dynamic-route-notype/<id>', views.dynamicRoute),
 ]

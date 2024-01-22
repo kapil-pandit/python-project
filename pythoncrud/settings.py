@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crud_app',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,11 @@ WSGI_APPLICATION = 'pythoncrud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgrestest',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost'
     }
 }
 
@@ -116,8 +120,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+# STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+STRIPE_SECRET_KEY = 'sk_test_51IEZnBKbYssirQr0sDBvU5gNOclsGFoR9G9KkrBjfV98lKwogq3HsUi9xuXBzNjCuxE3CHAOUDVX9lmUoiYW7iCO00TUOJWx6S'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51IEZnBKbYssirQr0y0Lg63Ox9g1J1tTu5zl0nk9wGyDQz3SMh7LyASpojziE6waJ5H4ypGexAklRLRreWktqaFIn001RHZ9RUM'
+STRIPE_WEBHOOK_SECRET = 'whsec_cef6443738724d35c2ac1f8497b8cd79f3a8ea7b7e6ded51d678ced098c0c1e7'
