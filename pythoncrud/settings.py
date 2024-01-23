@@ -124,22 +124,22 @@ WSGI_APPLICATION = 'pythoncrud.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'djongo',
-    #     'NAME': 'django',
-    #     'ENFORCE_SCHEMA': False,
-    #     'CLIENT': {
-    #         'host': 'mongodb://localhost:27017/',
-    #     }
-    # }
-            
-         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgrestest',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost'
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'django',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017/',
+        }
     }
+            
+    #      'default': {
+    #         'ENGINE': 'django.db.backends.postgresql',
+    #         'NAME': 'postgrestest',
+    #         'USER': 'postgres',
+    #         'PASSWORD': 'postgres',
+    #         'HOST': 'localhost'
+    # }
 
 }
 
