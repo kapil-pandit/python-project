@@ -29,5 +29,5 @@ urlpatterns = [
     path('contact-us/', views.conatctus),
     path('updates/', views.updates),
     path('dynamic-route/<int:id>', views.dynamicRoute),
-    path('dynamic-route-notype/<id>', views.dynamicRoute),
+    path('dynamic-route-notype/<id>', views.dynamicRoute)
 ]
