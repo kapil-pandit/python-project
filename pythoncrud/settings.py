@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'crud_app',
     'rest_framework_simplejwt.token_blacklist',
+     'crispy_forms', 
+     'crispy_bootstrap5',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -124,22 +125,22 @@ WSGI_APPLICATION = 'pythoncrud.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'django',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb://localhost:27017/',
-        }
-    }
-            
-    #      'default': {
-    #         'ENGINE': 'django.db.backends.postgresql',
-    #         'NAME': 'postgrestest',
-    #         'USER': 'postgres',
-    #         'PASSWORD': 'postgres',
-    #         'HOST': 'localhost'
+    # 'default': {
+    #     'ENGINE': 'djongo',
+    #     'NAME': 'django',
+    #     'ENFORCE_SCHEMA': False,
+    #     'CLIENT': {
+    #         'host': 'mongodb://localhost:27017/',
+    #     }
     # }
+            
+         'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgrestest',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'localhost'
+    }
 
 }
 
@@ -189,3 +190,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STRIPE_SECRET_KEY = 'sk_test_51IEZnBKbYssirQr0sDBvU5gNOclsGFoR9G9KkrBjfV98lKwogq3HsUi9xuXBzNjCuxE3CHAOUDVX9lmUoiYW7iCO00TUOJWx6S'
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51IEZnBKbYssirQr0y0Lg63Ox9g1J1tTu5zl0nk9wGyDQz3SMh7LyASpojziE6waJ5H4ypGexAklRLRreWktqaFIn001RHZ9RUM'
 STRIPE_WEBHOOK_SECRET = 'whsec_cef6443738724d35c2ac1f8497b8cd79f3a8ea7b7e6ded51d678ced098c0c1e7'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" 
+CRISPY_TEMPLATE_PACK = "bootstrap5"

@@ -17,9 +17,9 @@
     />
     <title>Enter Employee</title>
 </head>
-<style>
+{% comment %} <style>
     table {
-        border: 8px outset;
+        border: 10px outset;
         border-radius: 10px;
         border-spacing: 10px;
         padding: 20px;
@@ -31,35 +31,38 @@
     td {
         padding: 5px;
     }
-</style>
+</style> {% endcomment %}
 
 <body>
-    <h2 style="text-align:center"> Enter Details of Employee </h2>
-    <form method="POST">
+    <div class="container  "> 
+        <h2 style="text-align:center" class="mt-3 mb-2"> Enter Details of Employee </h2>
+    <form class ="card" method="POST">
         {% csrf_token %}
-        <table style="width:50%" align="center">
+        <table class="mt-3 mb-2" style="width:50%" align="center">
             <tr>
                 <td>Employee Id</td>
-                <td><input type="text" placeholder="Enter Employee Id" name="EmpId" </td>
+                <td><input type="text" class=" form-control input-group mb-3" placeholder="Enter Employee Id" name="EmpId" </td>
             </tr>
             <tr>
                 <td>Employee Name</td>
-                <td><input type="text" placeholder="Enter Employee Name" name="EmpName" </td>
+                <td><input type="text" class=" form-control input-group mb-3" placeholder="Enter Employee Name" name="EmpName" </td>
             </tr>
             <tr>
                 <td>Gender</td>
-                <td><input type="radio" name="EmpGender" value="Male"> Male
-                    <input type="radio" name="EmpGender" value="Female"> Female
-                    <input type="radio" name="EmpGender" value="Other"> Other
+                <td class="mb-3">
+                    <input  type="radio" name="EmpGender" value="Male"> Male
+                    <input  type="radio" name="EmpGender" value="Female"> Female
+                    <input  type="radio" name="EmpGender" value="Other"> Other
                 </td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td><input type="email" placeholder="Enter Employee Email" name="EmpEmail" </td>
+                <td>Email </td>
+                
+                <td><input class=" form-control input-group mb-3" type="email" placeholder="Enter Employee Email" name="EmpEmail" </td>
             </tr>
             <tr>
                 <td>Designation</td>
-                <td><select name="EmpDesignation">
+                <td><select class=" form-control input-group mb-3" name="EmpDesignation">
                         <option selected disabled=true>Select Designation</option>
                         <option> Project Manager </option>
                         <option> Programmer </option>
@@ -70,7 +73,7 @@
                     </select></td>
             </tr>
             <tr>
-                <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+                <td colspan="2" align="right"><input type="submit" class="btn btn-outline-success mr-50 mt-2"> </td>
             </tr>
         </table>
 
@@ -79,10 +82,21 @@
             Do you want see Information of Employees?
         </div>
 
-        <p>
-            <a href="{% url 'show-emp' %}">Go To Employee Information--></a>
-        </p>
+
+       
+
+          <div class="card text-center mb-3 mx-auto p-1" style="width: 28rem;">
+            <div class="card-header">
+              Employee List
+            </div>
+            <div class="card-body">
+                <a href="{% url 'show-emp' %}" class="btn btn-outline-info">Go To Employee Information--></a>
+            </div>
+          </div>
+
+
     </form>
+    </div>
 </body>
 
 </html>

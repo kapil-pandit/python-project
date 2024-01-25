@@ -17,14 +17,7 @@
     <title>Search Employee</title>
   </head>
   <style>
-    table {
-      border: 8px outset;
-      border-radius: 10px;
-      border-spacing: 10px;
-      padding: 20px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    
 
     th,
     td {
@@ -35,8 +28,8 @@
 
   <body>
     <div class="container">
-      <h2 style="text-align: center">Employee Information</h2>
-      <table align="center" style="margin: 0px auto">
+      <h2 style="text-align: center" class="mt-3 mb-2">Employee Information</h2>
+      <table align="center" class="mt-3 mb-2" style="margin: 0px auto">
         <thead>
           <tr>
             <th>Employee ID</th>
@@ -70,16 +63,20 @@
           {% endfor %}
         </tbody>
       </table>
-      <div class="container">
+
+      <div>
         <br /><br />
         <div class="alert alert-danger" role="alert">
           Do you want to enter more Employees?
         </div>
-        <p>
-          <button class="btn btn-outline-info">
-            <a href="{% url 'insert-emp' %}"><-- Go To Home Page</a>
-          </button>
-        </p>
+      </div>
+      <div class="card text-center mb-3 mx-auto p-1" style="width: 28rem">
+        <div class="card-header">Employee Insert</div>
+        <div class="card-body">
+          <a href="{% url 'insert-emp' %}" class="btn btn-outline-info"
+            ><-- Go To Home Page</a
+          >
+        </div>
       </div>
     </div>
   </body>
